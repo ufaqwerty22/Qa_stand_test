@@ -1,0 +1,13 @@
+from playwright.sync_api import Page, Locator
+
+
+class BaseControl:
+    def __init__(self, page: Page, wrapper: Locator):
+        self.page: Page = page
+        self.wrapper: Locator = wrapper
+
+    def click_anyway(self):
+        self.wrapper.click(force=True)
+
+    def fill(self, text):
+        self.wrapper.fill(text)
