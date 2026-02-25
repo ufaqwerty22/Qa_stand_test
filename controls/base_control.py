@@ -8,6 +8,3 @@ class BaseControl:
 
     def click_anyway(self):
         self.wrapper.click(force=True)
-
-    def fill(self, text):
-        self.wrapper.fill(text)
