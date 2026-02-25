@@ -15,6 +15,7 @@
 - Dotenv
 - Os (для Dotenv)
 - Pytest
+- Playwright
 
 ### Решенные проблемы
 *Зависимость тестов*  
