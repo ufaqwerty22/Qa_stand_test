@@ -21,12 +21,12 @@ def create_and_delete_user():
         "username": name
     }
 
-    response = requests.post(f'{os.getenv('DOMAIN_URL')}/users', json=payload, params=params)
+    requests.post(f'{os.getenv('DOMAIN_URL')}/users', json=payload, params=params)
 
     yield name
 
-    resp_for_delete_user = requests.get(f'{os.getenv('DOMAIN_URL')}/users/{payload.get('username')}', params=params)
-    user_for_delete_json = resp_for_delete_user.json()
+    user_for_delete_json = requests.get(f'{os.getenv('DOMAIN_URL')}/users/{payload.get('username')}',
+                                        params=params).json()
 
     if user_for_delete_json.get('username') == payload.get('username'):
-        delete_user = requests.delete(f'{os.getenv('DOMAIN_URL')}/users/{name}')
+        requests.delete(f'{os.getenv('DOMAIN_URL')}/users/{name}')
