@@ -12,7 +12,7 @@ class LoginComponent(BaseComponent):
         self.__password_input = InputControl(self.page, self.wrapper.locator('[name="password"]'))
         self.__submit_button = ButtonControl(self.page, self.wrapper.locator('[type="submit"]'))
 
-    def get_login_input(self):
+    def get_username_input(self):
         return self.__username_input
 
     def get_password_input(self):
@@ -21,7 +21,11 @@ class LoginComponent(BaseComponent):
     def get_submit_button(self):
         return self.__submit_button
 
-    def login(self, username: str, password: str):
+    def enter_username(self, username):
         self.__username_input.fill(username)
+
+    def enter_password(self, password):
         self.__password_input.fill(password)
+
+    def click_submit_button(self):
         self.__submit_button.click_anyway()

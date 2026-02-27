@@ -10,3 +10,6 @@ class InfoComponent(BaseComponent):
 
     def get_link_by_text(self, text):
         return LinkControl(self.page, self.wrapper.get_by_text(text))
+
+    def click_link_by_text(self, text):
+        self.get_link_by_text(text).click_anyway()
