@@ -1,14 +1,14 @@
-import sys
+import os
 
 from playwright.sync_api import Page, expect
 
-sys.path.append(r'C:\Users\PC\PycharmProjects\Qa_stand_test')
 from pages.login_page import LoginPage
 
 
-def test_login_page(page: Page):
+def test_valid_auth(page: Page):
     login_page = LoginPage(page)
+    login_component = login_page.get_login_component()
     login_page.open()
-    login_page.enter_username('testuser')
-    login_page.enter_password('password123')
-    login_page.click_submit_button()
+    login_component.enter_username(os.getenv('VALID_USERNAME'))
+    login_component.enter_password(os.getenv('VALID_PASSWORD'))
+    login_component.click_submit_button()
