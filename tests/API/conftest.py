@@ -3,9 +3,11 @@ import uuid
 
 import pytest
 import requests
+from dotenv import load_dotenv
+load_dotenv()
 
 
-@pytest.fixture
+@pytest.fixture(scope='function')
 def create_and_delete_user():
     name = f'user_{str(uuid.uuid4())[:6]}'
     password = f'pass_{str(uuid.uuid4())[:6]}'
@@ -25,8 +27,8 @@ def create_and_delete_user():
 
     yield name
 
-    user_for_delete_json = requests.get(f'{os.getenv('DOMAIN_URL')}/users/{payload.get('username')}',
+    user_to_delete_json = requests.get(f'{os.getenv('DOMAIN_URL')}/users/{payload.get('username')}',
                                         params=params).json()
 
-    if user_for_delete_json.get('username') == payload.get('username'):
+    if user_to_delete_json.get('username') == payload.get('username'):
         requests.delete(f'{os.getenv('DOMAIN_URL')}/users/{name}')

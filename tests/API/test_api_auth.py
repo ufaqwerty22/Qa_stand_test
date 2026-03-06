@@ -1,8 +1,6 @@
 import os
 
 import requests
-from dotenv import load_dotenv
-load_dotenv()
 
 
 params = {'API_KEY': os.getenv('API_KEY')}
@@ -16,7 +14,6 @@ def test_delete_user(create_and_delete_user):
 
 def test_update_user(create_and_delete_user):
     username = create_and_delete_user
-
     update_payload = {
         'username': 'MilkaMaker',
         'age': 17
