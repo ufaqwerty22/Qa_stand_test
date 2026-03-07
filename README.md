@@ -7,9 +7,22 @@
 - API testing
 
 ### Запуск тестов
-- Клонируете репо в вашу IDE
+Клон в IDE
+```
+git clone github.com/ufaqwerty22/Qa_stand_test.git
+```
+Установка зависимостей
+```
+pip install -r requirements.txt
+```
+Запуск тестов
+```
+pytest
+```
+
+<!-- - Клонируете репо в вашу IDE
 - Прописать в консоль - **pip install -r requirements.txt**
-- Для запуска всех тестов прописать в консоль - **pytest -v ./tests/**
+- Для запуска всех тестов прописать в консоль - **pytest -v ./tests/** -->
 
 ### Основные библиотеки
 - Requests
