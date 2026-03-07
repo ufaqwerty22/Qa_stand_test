@@ -7,7 +7,7 @@ load_dotenv()
 @pytest.fixture(scope='function')
 def page():
     playwright = sync_playwright().start()
-    browser = playwright.chromium.launch(headless=False)
+    browser = playwright.chromium.launch()
     page = browser.new_page()
     yield page
     browser.close()
