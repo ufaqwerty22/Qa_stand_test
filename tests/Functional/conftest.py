@@ -1,5 +1,3 @@
-from os import getenv
-
 import pytest
 from dotenv import load_dotenv
 from playwright.sync_api import sync_playwright
