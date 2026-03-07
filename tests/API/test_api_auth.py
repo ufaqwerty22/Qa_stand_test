@@ -24,7 +24,7 @@ def test_update_user(create_and_delete_user):
     assert response.status_code == 200, f"Actual response code - {response.status_code}. Text - {response.text}"
 
 
-def test_delete_fake_user(create_and_delete_user):
+def test_delete_fake_user():
     fake_username = 'l;asldkopq'
 
     response = requests.delete(f'{os.getenv('DOMAIN_URL')}/users/{fake_username}', params=params)
