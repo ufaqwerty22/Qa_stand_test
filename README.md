@@ -9,7 +9,7 @@
 ### Запуск тестов
 Клонирование репозитория в IDE
 ```
-git clone github.com/ufaqwerty22/Qa_stand_test.git
+https://github.com/ufaqwerty22/Qa_stand_test.git
 ```
 Установка зависимостей
 ```
