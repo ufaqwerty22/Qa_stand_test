@@ -8,7 +8,8 @@ load_dotenv()
 def page():
     playwright = sync_playwright().start()
     browser = playwright.chromium.launch()
-    page = browser.new_page()
+    context = browser.new_context(ignore_https_errors=True)
+    page = context.new_page()
     yield page
     browser.close()
     playwright.stop()
