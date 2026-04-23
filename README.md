@@ -1,6 +1,6 @@
 ### Описание
 
-*Это мой пет-проект по тестированию для сайта <qa-stand-login.inzhenerka.tech/login>
+*Это мой пет-проект по тестированию для сайта [qa-stand-login.inzhenerka.tech/login](https://qa-stand-login.inzhenerka.tech/login)
   
 ### Затронутые виды тестирования
 - Function testing
