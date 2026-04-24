@@ -12,8 +12,8 @@ load_dotenv()
 async def create_and_delete_user():
     session = ClientSession()
     fake = Faker('ru_RU')
-    username = fake.user_name()
-    password = fake.password(length=6)
+    username = await asyncio.to_thread(fake.user_name)
+    password = await asyncio.to_thread(fake.password)
     params = {'API_KEY': os.getenv('API_KEY')}
 
     payload = {
