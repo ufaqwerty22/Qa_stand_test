@@ -25,10 +25,11 @@ pytest
 - Для запуска всех тестов прописать в консоль - **pytest -v ./tests/** -->
 
 ### Основные библиотеки
-- Requests
-- Dotenv
 - Pytest
 - Playwright
+- Asyncio
+- ~~Requests~~ Aiohttp
+- Dotenv
 - Faker
 
 ### Решенные проблемы
