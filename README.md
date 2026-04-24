@@ -29,6 +29,7 @@ pytest
 - Dotenv
 - Pytest
 - Playwright
+- Faker
 
 ### Решенные проблемы
 *Зависимость API тестов*  
