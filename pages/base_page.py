@@ -7,4 +7,4 @@ class BasePage:
         self.url: str = url
 
     def open(self):
-        self.page.goto(self.url)
+        self.page.goto(self.url, wait_until='domcontentloaded')
