@@ -6,6 +6,14 @@
 - Function testing
 - API testing
 
+### Основные библиотеки
+- Pytest
+- Playwright
+- Asyncio
+- ~~Requests~~ Aiohttp
+- Dotenv
+- Faker
+
 ### Установка проекта
 Клонирование репозитория в IDE
 ```
@@ -23,14 +31,6 @@ pytest
 <!-- - Клонируете репо в вашу IDE
 - Прописать в консоль - **pip install -r requirements.txt**
 - Для запуска всех тестов прописать в консоль - **pytest -v ./tests/** -->
-
-### Основные библиотеки
-- Pytest
-- Playwright
-- Asyncio
-- ~~Requests~~ Aiohttp
-- Dotenv
-- Faker
 
 ### Решенные проблемы
 *Зависимость API тестов*  
