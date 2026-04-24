@@ -1,4 +1,4 @@
-from playwright.sync_api import Page, Locator
+from playwright.async_api import Page, Locator
 
 
 class BaseControl:
@@ -6,5 +6,5 @@ class BaseControl:
         self.page: Page = page
         self.wrapper: Locator = wrapper
 
-    def click_anyway(self):
-        self.wrapper.click(force=True)
+    async def click_anyway(self):
+        await self.wrapper.click(force=True)

@@ -1,4 +1,4 @@
-from playwright.sync_api import Page, Locator
+from playwright.async_api import Page, Locator
 
 from pages.base_page import BasePage
 from components.info_component import InfoComponent

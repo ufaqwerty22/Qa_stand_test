@@ -1,4 +1,4 @@
-from playwright.sync_api import Page, Locator
+from playwright.async_api import Page, Locator
 
 from components.base_component import BaseComponent
 from controls.input_control import InputControl
@@ -21,11 +21,11 @@ class LoginComponent(BaseComponent):
     def get_submit_button(self):
         return self.__submit_button
 
-    def enter_username(self, username):
-        self.__username_input.fill(username)
+    async def enter_username(self, username):
+        await self.__username_input.fill(username)
 
-    def enter_password(self, password):
-        self.__password_input.fill(password)
+    async def enter_password(self, password):
+        await self.__password_input.fill(password)
 
-    def click_submit_button(self):
-        self.__submit_button.click_anyway()
+    async def click_submit_button(self):
+        await self.__submit_button.click_anyway()

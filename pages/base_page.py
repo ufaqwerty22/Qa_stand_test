@@ -1,4 +1,4 @@
-from playwright.sync_api import Page
+from playwright.async_api import Page
 
 
 class BasePage:
@@ -6,5 +6,5 @@ class BasePage:
         self.page: Page = page
         self.url: str = url
 
-    def open(self):
-        self.page.goto(self.url, wait_until='domcontentloaded')
+    async def open(self):
+        await self.page.goto(self.url, wait_until='domcontentloaded')

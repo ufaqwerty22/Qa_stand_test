@@ -1,17 +1,18 @@
 import os
-import uuid
 
-import pytest
-import requests
+import asyncio
+import pytest_asyncio
+from aiohttp import ClientSession
 from dotenv import load_dotenv
 from faker import Faker
 load_dotenv()
 
 
-@pytest.fixture(scope='function')
-def create_and_delete_user():
-    fake = Faker()
-    name = fake.name()
+@pytest_asyncio.fixture(scope='function')
+async def create_and_delete_user():
+    session = ClientSession()
+    fake = Faker('ru_RU')
+    username = fake.user_name()
     password = fake.password(length=6)
     params = {'API_KEY': os.getenv('API_KEY')}
 
@@ -22,15 +23,17 @@ def create_and_delete_user():
         "jobtitle": "Тестировщик",
         "name": "Автоматизатор Тестович",
         "password": password,
-        "username": name
+        "username": username
     }
 
-    requests.post(f'{os.getenv('DOMAIN_URL')}/users', json=payload, params=params, verify=False)
+    await session.post(f'{os.getenv('DOMAIN_URL')}/users', json=payload, params=params, ssl=False)
 
-    yield name
+    yield username
 
-    user_to_delete_json = requests.get(f'{os.getenv('DOMAIN_URL')}/users/{payload.get('username')}',
-                                        params=params, verify=False).json()
+    user_to_delete = await session.get(f'{os.getenv('DOMAIN_URL')}/users/{payload.get('username')}',
+                                        params=params, ssl=False)
+    user_to_delete_json = await user_to_delete.json()
 
     if user_to_delete_json.get('username') == payload.get('username'):
-        requests.delete(f'{os.getenv('DOMAIN_URL')}/users/{name}', verify=False)
+        await session.delete(f'{os.getenv('DOMAIN_URL')}/users/{username}', ssl=False)
+    await session.close()

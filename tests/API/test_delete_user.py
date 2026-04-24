@@ -1,13 +1,15 @@
 import os
 
-import requests
-from faker import Faker
+import pytest
+from aiohttp import ClientSession
 
 
 params = {'API_KEY': os.getenv('API_KEY')}
-def test_delete_user(create_and_delete_user):
+async def test_delete_user(create_and_delete_user):
+    session = ClientSession()
     username = create_and_delete_user
 
-    response = requests.delete(f'{os.getenv('DOMAIN_URL')}/users/{username}', params=params, verify=False)
+    response = await session.delete(f'{os.getenv('DOMAIN_URL')}/users/{username}', params=params, ssl=False)
 
-    assert response.status_code == 200, f"Actual response code - {response.status_code}. Text - {response.text}"
+    assert response.status == 200, f"Actual response code - {response.status}. Text - {response.text}"
+    await session.close()
