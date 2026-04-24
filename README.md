@@ -6,7 +6,7 @@
 - Function testing
 - API testing
 
-### Запуск тестов
+### Установка проекта
 Клонирование репозитория в IDE
 ```
 https://github.com/ufaqwerty22/Qa_stand_test.git
