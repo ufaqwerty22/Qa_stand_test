@@ -9,8 +9,7 @@
 ### Основные библиотеки
 - Pytest
 - Playwright
-- Asyncio
-- ~~Requests~~ Aiohttp
+- Requests
 - Dotenv
 - Faker
 
