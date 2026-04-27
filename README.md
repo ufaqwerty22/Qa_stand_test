@@ -1,12 +1,20 @@
 ### Описание
 
-*Это мой пет-проект по тестированию для сайта qa-stand-login.inzhenerka.tech/login*  
+*Это мой пет-проект по тестированию для сайта [qa-stand-login.inzhenerka.tech/login](https://qa-stand-login.inzhenerka.tech/login)*
   
 ### Затронутые виды тестирования
 - Function testing
 - API testing
 
-### Запуск тестов
+### Основные библиотеки
+- Pytest
+- Playwright
+- Asyncio
+- ~~Requests~~ Aiohttp
+- Dotenv
+- Faker
+
+### Установка проекта
 Клонирование репозитория в IDE
 ```
 https://github.com/ufaqwerty22/Qa_stand_test.git
@@ -23,12 +31,6 @@ pytest
 <!-- - Клонируете репо в вашу IDE
 - Прописать в консоль - **pip install -r requirements.txt**
 - Для запуска всех тестов прописать в консоль - **pytest -v ./tests/** -->
-
-### Основные библиотеки
-- Requests
-- Dotenv
-- Pytest
-- Playwright
 
 ### Решенные проблемы
 *Зависимость API тестов*  
