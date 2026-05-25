@@ -62,7 +62,9 @@ Qa_stand_test/
 │   ├── API/
 │   │   ├── .env
 │   │   ├── conftest.py
-│   │   └── test_api_auth.py
+│   │   ├── test_delete_fake_user.py
+│   │   ├── test_delete_user.py
+│   │   └── test_update_user.py
 │   │
 │   └── Functional/
 │       ├── .env
